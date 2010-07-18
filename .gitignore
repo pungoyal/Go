@@ -1,4 +1,4 @@
-Cruise/bin/*
-CruiseTest/bin/*
+Go/bin/*
+GoTest/bin/*
 *DS_Store
 .metadata/*
