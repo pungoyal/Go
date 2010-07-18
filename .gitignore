@@ -1,0 +1,4 @@
+Cruise/bin/*
+CruiseTest/bin/*
+*DS_Store
+.metadata/*
