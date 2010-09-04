@@ -1,6 +1,6 @@
 package com.thoughtworks.go.domain;
 
-public class Project {
+public class Pipeline {
 
 	private final String name;
 	private final String status;
@@ -9,7 +9,7 @@ public class Project {
 	private final String lastBuildTime;
 	private final String url;
 
-	public Project(String name, String status, String lastBuildStatus, String lastBuildLabel, String lastBuildTime,
+	public Pipeline(String name, String status, String lastBuildStatus, String lastBuildLabel, String lastBuildTime,
 			String url) {
 		this.name = name;
 		this.status = status;

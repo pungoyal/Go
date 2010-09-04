@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.thoughtworks.go.test;
+package com.thoughtworks.go.tests;
 
 public final class R {
     public static final class attr {

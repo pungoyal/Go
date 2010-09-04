@@ -10,11 +10,11 @@ import org.xml.sax.XMLReader;
 
 import android.util.Log;
 
-import com.thoughtworks.go.domain.Projects;
+import com.thoughtworks.go.domain.Pipelines;
 
 public class FeedParser {
-	public Projects parse(InputStream cctray) {
-		Projects projects = new Projects();
+	public Pipelines parse(InputStream cctray) {
+		Pipelines projects = new Pipelines();
 		try {
 			InputSource inputSource = new InputSource(cctray);
 			SAXParserFactory factory = SAXParserFactory.newInstance();

@@ -1,4 +1,4 @@
-package com.thoughtworks.go.test;
+package com.thoughtworks.go.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;

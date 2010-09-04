@@ -4,19 +4,19 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.thoughtworks.go.domain.Projects;
-import com.thoughtworks.go.domain.factories.ProjectFactory;
+import com.thoughtworks.go.domain.Pipelines;
+import com.thoughtworks.go.domain.factories.PipelineFactory;
 
 public class TrayFeedHandler extends DefaultHandler {
 	private static final String PROJECT = "Project";
-	private Projects projects;
-	private ProjectFactory factory;
+	private Pipelines pipelines;
+	private PipelineFactory factory;
 
 	@Override
 	public void startDocument() throws SAXException {
 		super.startDocument();
-		projects = new Projects();
-		factory = new ProjectFactory();
+		pipelines = new Pipelines();
+		factory = new PipelineFactory();
 	}
 
 	@Override
@@ -24,11 +24,11 @@ public class TrayFeedHandler extends DefaultHandler {
 		super.startElement(uri, localName, qName, attributes);
 
 		if (localName.equalsIgnoreCase(PROJECT)) {
-			projects.add(factory.createWith(attributes));
+			pipelines.add(factory.createWith(attributes));
 		}
 	}
 
-	public Projects getResults() {
-		return projects;
+	public Pipelines getResults() {
+		return pipelines;
 	}
 }
