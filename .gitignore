@@ -2,3 +2,4 @@ Go/bin/*
 GoTest/bin/*
 *DS_Store
 .metadata/*
+local/*
