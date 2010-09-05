@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Go for Android</string>
+    <string name="app_name">Go</string>
+    <string name="app_full_name">Go - Build Server</string>
     <string name="view_status_label">Current Status</string>
     <string name="about_label">About Go</string>
-    <string name="exit_label">Go away!</string>
+    <string name="exit_label">Exit</string>
 
     <string name="pipeline_status_title">Current Build Status</string>
     <string name="empty">No pipelines found!</string>
