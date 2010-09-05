@@ -2,14 +2,14 @@ package com.thoughtworks.go.tests.domain;
 
 import java.util.Date;
 
-import android.test.AndroidTestCase;
+import junit.framework.TestCase;
 
 import com.thoughtworks.go.domain.BuildActivity;
 import com.thoughtworks.go.domain.BuildStatus;
 import com.thoughtworks.go.domain.Pipeline;
 import com.thoughtworks.go.tests.mothers.PipelineMother;
 
-public class PipelineTest extends AndroidTestCase {
+public class PipelineTest extends TestCase {
 	private Pipeline pipeline;
 
 	@Override
@@ -25,6 +25,5 @@ public class PipelineTest extends AndroidTestCase {
 		assertEquals(BuildStatus.SUCCESS, pipeline.getLastBuildStatus());
 		assertEquals(100, pipeline.getLastBuildLabel());
 		assertEquals(new Date(2010, 1, 1, 10, 10, 10), pipeline.getLastBuildTime());
-
 	}
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Tests for Go for Android" default="unit-tests">
+	<property name="src.dir" value="src/com/thoughtworks/go/tests/domain" />
+
+	<path id="classpath.test">
+		<pathelement location="libs/junit-4.8.2.jar" />
+		<pathelement location="${src.dir}" />
+	</path>
+
+	<target name="unit-tests">
+		<junit printsummary="true" haltonfailure="true">
+			<classpath refid="classpath.test" />
+			<formatter type="xml" />
+			<batchtest>
+				<fileset dir="${src.dir}">
+					<include name="**/*Test*.java" />
+				</fileset>
+			</batchtest>
+
+			<formatter type="brief" usefile="false" />
+		</junit>
+	</target>
+</project>
