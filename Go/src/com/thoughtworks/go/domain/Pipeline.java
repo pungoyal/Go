@@ -50,4 +50,8 @@ public class Pipeline {
 	public BuildActivity getActivity() {
 		return activity;
 	}
+
+	public long getId() {
+		return 0L;
+	}
 }

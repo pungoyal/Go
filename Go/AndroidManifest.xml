@@ -8,7 +8,8 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity android:name=".StatusActivity" android:label="@string/pipeline_status_title" />
 	</application>
 
-	<uses-sdk android:minSdkVersion="8" />
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />
 </manifest> 
