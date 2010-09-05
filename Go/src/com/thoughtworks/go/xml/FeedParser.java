@@ -12,7 +12,7 @@ import com.thoughtworks.go.domain.Pipelines;
 
 public class FeedParser {
 	public Pipelines parse(InputStream cctray) {
-		Pipelines projects = new Pipelines();
+		Pipelines pipelines = new Pipelines();
 		try {
 			InputSource inputSource = new InputSource(cctray);
 			SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -22,11 +22,11 @@ public class FeedParser {
 			TrayFeedHandler feedHandler = new TrayFeedHandler();
 			xmlreader.setContentHandler(feedHandler);
 			xmlreader.parse(inputSource);
-			projects = feedHandler.getResults();
+			pipelines = feedHandler.getResults();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return projects;
+		return pipelines;
 	}
 }

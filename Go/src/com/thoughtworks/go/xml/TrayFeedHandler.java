@@ -9,13 +9,11 @@ import com.thoughtworks.go.domain.factories.PipelineFactory;
 
 public class TrayFeedHandler extends DefaultHandler {
 	private static final String PROJECT = "Project";
-	private Pipelines pipelines;
 	private PipelineFactory factory;
 
 	@Override
 	public void startDocument() throws SAXException {
 		super.startDocument();
-		pipelines = new Pipelines();
 		factory = new PipelineFactory();
 	}
 
@@ -24,11 +22,11 @@ public class TrayFeedHandler extends DefaultHandler {
 		super.startElement(uri, localName, qName, attributes);
 
 		if (localName.equalsIgnoreCase(PROJECT)) {
-			pipelines.add(factory.createWith(attributes));
+			factory.parseAndAdd(attributes);
 		}
 	}
 
 	public Pipelines getResults() {
-		return pipelines;
+		return factory.getPipelines();
 	}
 }

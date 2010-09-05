@@ -2,6 +2,7 @@ package com.thoughtworks.go.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -32,6 +33,7 @@ public class PipelineAdapter extends BaseAdapter {
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
+		Log.d("Adapter", "count - " + pipelines.size());
 		return new PipelineView(context, pipelines.get(position));
 	}
 }

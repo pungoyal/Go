@@ -8,18 +8,23 @@ import org.xml.sax.Attributes;
 
 import com.thoughtworks.go.domain.BuildActivity;
 import com.thoughtworks.go.domain.BuildStatus;
-import com.thoughtworks.go.domain.Pipeline;
+import com.thoughtworks.go.domain.Job;
+import com.thoughtworks.go.domain.Pipelines;
+import com.thoughtworks.go.domain.Stage;
 
 public class PipelineFactory {
+	private Pipelines pipelines;
 
-	public Pipeline createWith(Attributes attributes) {
-		String name = attributes.getValue("name");
+	public PipelineFactory() {
+		pipelines = new Pipelines();
+	}
+
+	public void parseAndAdd(Attributes attributes) {
 		BuildActivity activity = BuildActivity.parse(attributes.getValue("activity"));
 		BuildStatus lastBuildStatus = BuildStatus.parse(attributes.getValue("lastBuildStatus"));
 		int lastBuildLabel = Integer.parseInt(attributes.getValue("lastBuildLabel"));
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd'T'HH:mm:ss");
-
 		Date lastBuildTime;
 		try {
 			lastBuildTime = sdf.parse(attributes.getValue("lastBuildTime"));
@@ -27,10 +32,23 @@ public class PipelineFactory {
 			e.printStackTrace();
 			lastBuildTime = new Date();
 		}
-
 		String url = attributes.getValue("webUrl");
+		String name = attributes.getValue("name");
 
-		return new Pipeline(name, activity, lastBuildStatus, lastBuildLabel, lastBuildTime, url);
+		String[] buildables = name.split(" :: ");
+		String pipelineName = buildables[0];
+		String stageName = buildables[1];
+
+		if (buildables.length == 2) {
+			Stage stage = new Stage(stageName, activity, lastBuildStatus, lastBuildLabel, lastBuildTime, url);
+			pipelines.addStage(pipelineName, stage);
+		} else {
+			Job job = new Job(buildables[2], activity, lastBuildStatus, lastBuildLabel, lastBuildTime, url);
+			pipelines.addJobToStage(pipelineName, stageName, job);
+		}
 	}
 
+	public Pipelines getPipelines() {
+		return pipelines;
+	}
 }
