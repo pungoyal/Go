@@ -15,7 +15,13 @@ public class StatusActivity extends ListActivity {
 		setContentView(R.layout.status);
 
 		GoClient client = new GoClient(this);
-		Pipelines pipelines = client.getStatus(getResources().openRawResource(R.raw.cctray));
+		Pipelines pipelines;
+		try {
+			pipelines = client.getStatus(getResources().openRawResource(R.raw.cctray));
+		} catch (Exception e) {
+			pipelines = new Pipelines();
+			e.printStackTrace();
+		}
 
 		setListAdapter(new PipelineAdapter(this, pipelines));
 	}

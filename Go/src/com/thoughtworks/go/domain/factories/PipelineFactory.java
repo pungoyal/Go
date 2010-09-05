@@ -8,6 +8,7 @@ import org.xml.sax.Attributes;
 
 import com.thoughtworks.go.domain.BuildActivity;
 import com.thoughtworks.go.domain.BuildStatus;
+import com.thoughtworks.go.domain.Constants;
 import com.thoughtworks.go.domain.Job;
 import com.thoughtworks.go.domain.Pipelines;
 import com.thoughtworks.go.domain.Stage;
@@ -22,7 +23,7 @@ public class PipelineFactory {
 	public void parseAndAdd(Attributes attributes) {
 		BuildActivity activity = BuildActivity.parse(attributes.getValue("activity"));
 		BuildStatus lastBuildStatus = BuildStatus.parse(attributes.getValue("lastBuildStatus"));
-		int lastBuildLabel = Integer.parseInt(attributes.getValue("lastBuildLabel"));
+		String lastBuildLabel = attributes.getValue("lastBuildLabel");
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd'T'HH:mm:ss");
 		Date lastBuildTime;
@@ -35,7 +36,7 @@ public class PipelineFactory {
 		String url = attributes.getValue("webUrl");
 		String name = attributes.getValue("name");
 
-		String[] buildables = name.split(" :: ");
+		String[] buildables = name.split(Constants.SEPARATOR);
 		String pipelineName = buildables[0];
 		String stageName = buildables[1];
 

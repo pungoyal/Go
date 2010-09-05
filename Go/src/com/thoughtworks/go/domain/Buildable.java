@@ -7,11 +7,11 @@ public abstract class Buildable {
 	private final String name;
 	private final BuildActivity activity;
 	private final BuildStatus lastBuildStatus;
-	private final int lastBuildLabel;
+	private final String lastBuildLabel;
 	private final Date lastBuildTime;
 	private final String url;
 
-	protected Buildable(String name, BuildActivity activity, BuildStatus lastBuildStatus, int lastBuildLabel,
+	protected Buildable(String name, BuildActivity activity, BuildStatus lastBuildStatus, String lastBuildLabel,
 			Date lastBuildTime, String url) {
 		this.name = name;
 		this.activity = activity;
@@ -35,7 +35,7 @@ public abstract class Buildable {
 		return lastBuildStatus;
 	}
 
-	public int getLastBuildLabel() {
+	public String getLastBuildLabel() {
 		return lastBuildLabel;
 	}
 

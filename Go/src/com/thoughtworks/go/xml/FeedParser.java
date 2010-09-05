@@ -1,6 +1,7 @@
 package com.thoughtworks.go.xml;
 
-import java.io.InputStream;
+import java.io.Reader;
+import java.io.StringReader;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -9,12 +10,14 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
 import com.thoughtworks.go.domain.Pipelines;
+import com.thoughtworks.go.exceptions.XMLParseException;
 
 public class FeedParser {
-	public Pipelines parse(InputStream cctray) {
+	public Pipelines parse(String cctray) throws XMLParseException {
 		Pipelines pipelines = new Pipelines();
 		try {
-			InputSource inputSource = new InputSource(cctray);
+			Reader reader = new StringReader(cctray);
+			InputSource inputSource = new InputSource(reader);
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser parser = factory.newSAXParser();
 			XMLReader xmlreader = parser.getXMLReader();
@@ -24,9 +27,9 @@ public class FeedParser {
 			xmlreader.parse(inputSource);
 			pipelines = feedHandler.getResults();
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new XMLParseException(e, cctray);
 		}
-		
+
 		return pipelines;
 	}
 }
