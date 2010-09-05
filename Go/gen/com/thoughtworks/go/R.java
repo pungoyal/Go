@@ -19,24 +19,37 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int about_button=0x7f070001;
-        public static final int exit_button=0x7f070002;
-        public static final int view_status_button=0x7f070000;
+        public static final int about_button=0x7f080001;
+        public static final int exit_button=0x7f080002;
+        public static final int settings=0x7f080003;
+        public static final int view_status_button=0x7f080000;
     }
     public static final class layout {
         public static final int main=0x7f030000;
         public static final int status=0x7f030001;
     }
-    public static final class raw {
-        public static final int cctray=0x7f040000;
+    public static final class menu {
+        public static final int menu=0x7f070000;
     }
     public static final class string {
         public static final int about_label=0x7f060003;
         public static final int app_full_name=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int connection_key=0x7f06000a;
+        public static final int connection_summary=0x7f06000c;
+        public static final int connection_title=0x7f06000b;
         public static final int empty=0x7f060006;
         public static final int exit_label=0x7f060004;
         public static final int pipeline_status_title=0x7f060005;
+        public static final int server_key=0x7f06000d;
+        public static final int server_summary=0x7f06000f;
+        public static final int server_title=0x7f06000e;
+        public static final int settings_label=0x7f060007;
+        public static final int settings_shortcut=0x7f060009;
+        public static final int settings_title=0x7f060008;
         public static final int view_status_label=0x7f060002;
+    }
+    public static final class xml {
+        public static final int settings=0x7f040000;
     }
 }

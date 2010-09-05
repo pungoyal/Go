@@ -12,6 +12,7 @@
 		</activity>
 		<activity android:name=".StatusActivity" android:label="@string/pipeline_status_title"
 			android:screenOrientation="portrait" />
+		<activity android:name=".preferences.GoPreferences" android:label="@string/settings_title" />
 	</application>
 
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />

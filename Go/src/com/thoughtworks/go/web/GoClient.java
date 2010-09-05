@@ -8,7 +8,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
+import com.thoughtworks.go.domain.Constants;
 import com.thoughtworks.go.domain.Pipelines;
 import com.thoughtworks.go.exceptions.ServerUnreachableException;
 import com.thoughtworks.go.exceptions.XMLParseException;
@@ -18,13 +20,11 @@ public class GoClient {
 	private String server;
 
 	public GoClient(Context context) {
-//		SharedPreferences preferences = context.getSharedPreferences(Constants.APPLICATION_KEY, 0);
-		// server = preferences.getString(Constants.SERVER_KEY, "10.0.2.2");
-
-		server = "10.0.2.2:4567";
+		SharedPreferences preferences = context.getSharedPreferences(Constants.APPLICATION_KEY, 0);
+		server = preferences.getString(Constants.SERVER_KEY, "10.0.2.2:4567");
 	}
 
-	public Pipelines getStatus(InputStream inputStream) throws ServerUnreachableException, XMLParseException {
+	public Pipelines getStatus() throws ServerUnreachableException, XMLParseException {
 		try {
 			String cctray = getResponseXML();
 			FeedParser feedParser = new FeedParser();

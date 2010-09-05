@@ -17,7 +17,7 @@ public class StatusActivity extends ListActivity {
 		GoClient client = new GoClient(this);
 		Pipelines pipelines;
 		try {
-			pipelines = client.getStatus(getResources().openRawResource(R.raw.cctray));
+			pipelines = client.getStatus();
 		} catch (Exception e) {
 			pipelines = new Pipelines();
 			e.printStackTrace();

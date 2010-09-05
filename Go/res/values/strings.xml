@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Go</string>
-    <string name="app_full_name">Go - Build Server</string>
-    <string name="view_status_label">Current Status</string>
-    <string name="about_label">About Go</string>
-    <string name="exit_label">Exit</string>
+	<string name="app_name">Go</string>
+	<string name="app_full_name">Go - Build Server</string>
+	<string name="view_status_label">Current Status</string>
+	<string name="about_label">About Go</string>
+	<string name="exit_label">Exit</string>
 
-    <string name="pipeline_status_title">Pipelines</string>
-    <string name="empty">No pipelines found!</string>
+	<string name="pipeline_status_title">Pipelines</string>
+	<string name="empty">No pipelines found!</string>
+
+	<string name="settings_label">Settings...</string>
+	<string name="settings_title">Go settings</string>
+	<string name="settings_shortcut">s</string>
+
+	<string name="connection_key">connection</string>
+	<string name="connection_title">Connection</string>
+	<string name="connection_summary">Connection related preferences</string>
+
+	<string name="server_key">server</string>
+	<string name="server_title">Server</string>
+	<string name="server_summary">Where Go is hosted</string>
 </resources>
