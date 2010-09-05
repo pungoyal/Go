@@ -18,7 +18,7 @@ public class PipelineFactory {
 		BuildStatus lastBuildStatus = BuildStatus.parse(attributes.getValue("lastBuildStatus"));
 		int lastBuildLabel = Integer.parseInt(attributes.getValue("lastBuildLabel"));
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-ddTHH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd'T'HH:mm:ss");
 
 		Date lastBuildTime;
 		try {
