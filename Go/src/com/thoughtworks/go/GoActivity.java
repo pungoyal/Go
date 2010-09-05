@@ -12,12 +12,20 @@ public class GoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		View cardButton = findViewById(R.id.view_status_button);
-		cardButton.setOnClickListener(new OnClickListener() {
+		View viewStatusButton = findViewById(R.id.view_status_button);
+		viewStatusButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent intent = new Intent(GoActivity.this, StatusActivity.class);
 				startActivity(intent);
 			}
 		});
+		
+		View exitButton = findViewById(R.id.exit_button);
+		exitButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
 	}
 }

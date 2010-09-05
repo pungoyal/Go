@@ -8,8 +8,6 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import android.util.Log;
-
 import com.thoughtworks.go.domain.Pipelines;
 
 public class FeedParser {
@@ -29,7 +27,6 @@ public class FeedParser {
 			e.printStackTrace();
 		}
 		
-		Log.d("FeedParser", "Parsed " + projects.size() + " projects.");
 		return projects;
 	}
 }
