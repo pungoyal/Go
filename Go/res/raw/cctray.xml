@@ -2,8 +2,8 @@
 <Projects>
   <Project name="convoy :: Build-Unit-Test" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T18:53:05" webUrl="http://10.12.1.65:8153/cruise/tab/stage/detail/convoy/2600/Build-Unit-Test/1" />
   <Project name="convoy :: Build-Unit-Test :: rspec-unit" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T18:53:05" webUrl="http://10.12.1.65:8153/cruise/tab/build/detail/convoy/2600/Build-Unit-Test/1/rspec-unit" />
-  <Project name="convoy :: Build-Unit-Test :: js" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T18:48:58" webUrl="http://10.12.1.65:8153/cruise/tab/build/detail/convoy/2600/Build-Unit-Test/1/js" />
+  <Project name="convoy :: Build-Unit-Test :: js" activity="Sleeping" lastBuildStatus="Failure" lastBuildLabel="2600" lastBuildTime="2010-08-06T18:48:58" webUrl="http://10.12.1.65:8153/cruise/tab/build/detail/convoy/2600/Build-Unit-Test/1/js" />
   <Project name="convoy :: Build-Unit-Test :: code-smells" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T18:50:01" webUrl="http://10.12.1.65:8153/cruise/tab/build/detail/convoy/2600/Build-Unit-Test/1/code-smells" />
-  <Project name="convoy :: Functional-Test" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T19:02:33" webUrl="http://10.12.1.65:8153/cruise/tab/stage/detail/convoy/2600/Functional-Test/1" />
-  <Project name="convoy :: Functional-Test :: cucumber" activity="Sleeping" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T19:02:33" webUrl="http://10.12.1.65:8153/cruise/tab/build/detail/convoy/2600/Functional-Test/1/cucumber" />
+  <Project name="convoy :: Functional-Test" activity="Building" lastBuildStatus="Success" lastBuildLabel="2600" lastBuildTime="2010-08-06T19:02:33" webUrl="http://10.12.1.65:8153/cruise/tab/stage/detail/convoy/2600/Functional-Test/1" />
+  <Project name="convoy :: Functional-Test :: cucumber" activity="Building" lastBuildStatus="Failure" lastBuildLabel="2600" lastBuildTime="2010-08-06T19:02:33" webUrl="http://10.12.1.65:8153/cruise/tab/build/detail/convoy/2600/Functional-Test/1/cucumber" />
 </Projects>

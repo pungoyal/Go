@@ -1,8 +1,8 @@
 package com.thoughtworks.go.domain;
 
 public enum BuildStatus {
-	SUCCESS, BUILDING, FAILURE;
-	
+	SUCCESS, FAILURE;
+
 	public static BuildStatus parse(String status) {
 		for (BuildStatus buildStatus : BuildStatus.values())
 			if (buildStatus.matches(status))
