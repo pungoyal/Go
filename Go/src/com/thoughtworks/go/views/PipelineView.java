@@ -23,7 +23,7 @@ public class PipelineView extends LinearLayout {
 	private int getColor(BuildStatus lastStatus, BuildActivity activity) {
 
 		if (activity == BuildActivity.BUILDING) {
-			return lastStatus == BuildStatus.SUCCESS ? Color.YELLOW : Color.parseColor("#FFFF8040");
+			return lastStatus == BuildStatus.SUCCESS ? Color.YELLOW : Color.rgb(255, 128, 64);
 		}
 
 		return lastStatus == BuildStatus.SUCCESS ? Color.GREEN : Color.RED;
