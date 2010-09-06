@@ -6,8 +6,9 @@
 	<string name="about_label">About Go</string>
 	<string name="exit_label">Exit</string>
 
-	<string name="pipeline_status_title">Pipelines</string>
-	<string name="empty">No pipelines found!</string>
+	<string name="status_title">Pipelines</string>
+	<string name="pipeline_title">Pipelines</string>
+	<string name="empty">None found!</string>
 
 	<string name="settings_label">Settings...</string>
 	<string name="settings_title">Go settings</string>
@@ -27,7 +28,8 @@
 		Go is an enterprise release management
 		system from ThoughtWorks Studios.
 
-		This app connects to your Go instance
+		This app connects to your
+		Go instance
 		to see the latest build status.
 	</string>
 </resources>

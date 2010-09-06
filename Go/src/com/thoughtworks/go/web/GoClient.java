@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.thoughtworks.go.domain.Constants;
+import com.thoughtworks.go.domain.Pipeline;
 import com.thoughtworks.go.domain.Pipelines;
 import com.thoughtworks.go.exceptions.ServerUnreachableException;
 import com.thoughtworks.go.exceptions.XMLParseException;
@@ -33,6 +34,11 @@ public class GoClient {
 		} catch (IOException e) {
 			throw new ServerUnreachableException(e, server);
 		}
+	}
+
+	public Pipeline getStatusOf(String pipelineName) throws ServerUnreachableException, XMLParseException {
+		Pipelines pipelines = getStatus();
+		return pipelines.find(pipelineName);
 	}
 
 	private String getResponseXML() throws IOException {

@@ -27,4 +27,16 @@ public class Pipeline {
 		}
 	}
 
+	public boolean equals(Object o) {
+		String name = (String) o;
+		return name.equals(getName());
+	}
+
+	public int stagesCount() {
+		return stages.size();
+	}
+
+	public Stage stageAt(int position) {
+		return stages.get(position);
+	}
 }

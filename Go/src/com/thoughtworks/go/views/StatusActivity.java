@@ -1,9 +1,10 @@
-package com.thoughtworks.go;
+package com.thoughtworks.go.views;
 
 import android.app.ListActivity;
 import android.os.Bundle;
 
-import com.thoughtworks.go.adapters.PipelineAdapter;
+import com.thoughtworks.go.R;
+import com.thoughtworks.go.adapters.StatusAdapter;
 import com.thoughtworks.go.domain.Pipelines;
 import com.thoughtworks.go.web.GoClient;
 
@@ -23,6 +24,6 @@ public class StatusActivity extends ListActivity {
 			e.printStackTrace();
 		}
 
-		setListAdapter(new PipelineAdapter(this, pipelines));
+		setListAdapter(new StatusAdapter(this, pipelines));
 	}
 }

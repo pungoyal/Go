@@ -7,19 +7,20 @@ import android.widget.LinearLayout;
 
 import com.thoughtworks.go.domain.BuildActivity;
 import com.thoughtworks.go.domain.BuildStatus;
-import com.thoughtworks.go.domain.Pipeline;
+import com.thoughtworks.go.domain.Stage;
 
 public class PipelineView extends LinearLayout {
 
-	public PipelineView(Context context, Pipeline pipeline) {
+	public PipelineView(Context context, Stage stage) {
 		super(context);
 
-		Button name = new Button(context);
-		name.setText(pipeline.getName());
-		// name.setBackgroundColor(getColor(BuildStatus.FAILURE,
-		// BuildActivity.BUILDING));
-		name.setTextColor(Color.BLACK);
-		addView(name, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		Button stageButton = new Button(context);
+		stageButton.setText(stage.getName());
+		stageButton.setTextColor(Color.BLACK);
+		stageButton.setBackgroundColor(getColor(stage.getLastBuildStatus(), stage.getActivity()));
+
+		addView(stageButton, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
 	}
 
 	private int getColor(BuildStatus lastStatus, BuildActivity activity) {

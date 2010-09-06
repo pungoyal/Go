@@ -7,7 +7,7 @@ public class Pipelines extends ArrayList<Pipeline> {
 
 	public Pipeline findOrCreate(String name) {
 		for (Pipeline pipeline : this) {
-			if (pipeline.getName().equals(name))
+			if (pipeline.equals(name))
 				return pipeline;
 		}
 		Pipeline pipeline = new Pipeline(name);
@@ -23,5 +23,13 @@ public class Pipelines extends ArrayList<Pipeline> {
 	public void addJobToStage(String pipelineName, String stageName, Job job) {
 		Pipeline pipeline = findOrCreate(pipelineName);
 		pipeline.addJobToStage(stageName, job);
+	}
+
+	public Pipeline find(String name) {
+		for (Pipeline pipeline : this) {
+			if (pipeline.equals(name))
+				return pipeline;
+		}
+		return new Pipeline(name);
 	}
 }

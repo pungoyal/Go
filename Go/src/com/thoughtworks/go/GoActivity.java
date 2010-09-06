@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.thoughtworks.go.preferences.GoPreferences;
+import com.thoughtworks.go.views.StatusActivity;
 
 public class GoActivity extends Activity {
 	@Override
