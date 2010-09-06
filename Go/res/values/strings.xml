@@ -20,4 +20,14 @@
 	<string name="server_key">server</string>
 	<string name="server_title">Server</string>
 	<string name="server_summary">Where Go is hosted</string>
+
+	<string name="about_title">About Go</string>
+	<string name="about_text">
+		\
+		Go is an enterprise release management
+		system from ThoughtWorks Studios.
+
+		This app connects to your Go instance
+		to see the latest build status.
+	</string>
 </resources>

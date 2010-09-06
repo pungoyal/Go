@@ -10,6 +10,7 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity android:name=".About" android:label="@string/about_title" android:theme="@android:style/Theme.Dialog" />
 		<activity android:name=".StatusActivity" android:label="@string/pipeline_status_title"
 			android:screenOrientation="portrait" />
 		<activity android:name=".preferences.GoPreferences" android:label="@string/settings_title" />

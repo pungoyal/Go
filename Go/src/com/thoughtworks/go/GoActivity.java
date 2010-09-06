@@ -1,7 +1,5 @@
 package com.thoughtworks.go;
 
-import com.thoughtworks.go.preferences.GoPreferences;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.thoughtworks.go.preferences.GoPreferences;
 
 public class GoActivity extends Activity {
 	@Override
@@ -22,6 +22,13 @@ public class GoActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(GoActivity.this, StatusActivity.class);
 				startActivity(intent);
+			}
+		});
+
+		View aboutButton = findViewById(R.id.about_button);
+		aboutButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				startActivity(new Intent(GoActivity.this, About.class));
 			}
 		});
 

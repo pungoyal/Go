@@ -16,7 +16,8 @@ public class PipelineView extends LinearLayout {
 
 		Button name = new Button(context);
 		name.setText(pipeline.getName());
-//		name.setBackgroundColor(getColor(BuildStatus.FAILURE, BuildActivity.BUILDING));
+		// name.setBackgroundColor(getColor(BuildStatus.FAILURE,
+		// BuildActivity.BUILDING));
 		name.setTextColor(Color.BLACK);
 		addView(name, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
 	}
